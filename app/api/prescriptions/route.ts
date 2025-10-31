@@ -1,7 +1,9 @@
-// app/api/prescriptions/route.ts
+// /app/api/prescriptions/route.ts
 import { NextResponse } from "next/server";
 import { prisma } from "@/app/lib/prisma";
 
+// ✅ Prisma는 Edge 런타임에서 동작하지 않음
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
@@ -18,7 +20,7 @@ export async function GET(req: Request) {
     }
 
     const item = await prisma.prescriptions.findUnique({
-      where: { code }, // code가 PK
+      where: { code },
     });
 
     if (!item) {
@@ -28,13 +30,13 @@ export async function GET(req: Request) {
       );
     }
 
-    (item as any).id = (item as any).id.toString();
+    // bigint → string 변환 (JSON 전송 오류 방지)
+    (item as any).id = (item as any).id?.toString?.() ?? null;
 
-    console.log(item);
-
+    console.log("✅ Prescription Loaded:", item.code);
     return NextResponse.json(item, { status: 200 });
   } catch (err) {
-    console.error("[/api/prescriptions] GET error:", err);
+    console.error("❌ [/api/prescriptions] GET error:", err);
     return NextResponse.json(
       { error: "INTERNAL_ERROR", message: "Unexpected server error." },
       { status: 500 }
