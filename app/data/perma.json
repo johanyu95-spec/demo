@@ -1,0 +1,87 @@
+{
+  "P": [
+    {
+      "id": "P1",
+      "text": "최근 한 달간 일상에서 즐거움이나 기쁨을 자주 느끼셨나요?",
+      "reverse_score": false
+    },
+    {
+      "id": "P2",
+      "text": "미래에 대해 희망적이고 긍정적으로 생각하시나요?",
+      "reverse_score": false
+    }
+  ],
+  "E": [
+    {
+      "id": "E1",
+      "text": "업무나 활동에 깊이 몰입하여 시간 가는 줄 모르는 경험이 있나요?",
+      "reverse_score": false
+    },
+    {
+      "id": "E2",
+      "text": "평소 즐기던 취미나 활동에 여전히 흥미를 느끼시나요?",
+      "reverse_score": false
+    }
+  ],
+  "S": [
+    {
+      "id": "S1",
+      "text": "주변에 나를 이해하고 지지해주는 사람이 있나요?",
+      "reverse_score": false
+    },
+    {
+      "id": "S2",
+      "text": "최근 한 달간 의미있는 대화를 나눈 사람이 있나요?",
+      "reverse_score": false
+    },
+    {
+      "id": "S3",
+      "text": "사람들과 어울리는 것이 즐겁고 편안한가요?",
+      "reverse_score": false
+    },
+    {
+      "id": "S4",
+      "text": "내가 속한 공동체나 그룹에서 소속감을 느끼나요?",
+      "reverse_score": false
+    },
+    {
+      "id": "S5",
+      "text": "SNS나 다른 사람과 자신을 비교하며 열등감을 느끼나요?",
+      "reverse_score": true
+    },
+    {
+      "id": "S6",
+      "text": "다른 사람에게 먼저 연락하거나 다가가기 어려운가요?",
+      "reverse_score": true
+    },
+    {
+      "id": "S7",
+      "text": "혼자 있는 시간이 외롭기보다 편안한가요?",
+      "reverse_score": false
+    }
+  ],
+  "M": [
+    {
+      "id": "M1",
+      "text": "현재 하고 있는 일이나 삶이 의미있다고 느끼시나요?",
+      "reverse_score": false
+    },
+    {
+      "id": "M2",
+      "text": "내 삶이 더 큰 목적이나 가치와 연결되어 있다고 느끼시나요?",
+      "reverse_score": false
+    }
+  ],
+  "A": [
+    {
+      "id": "A1",
+      "text": "최근 내가 무언가를 잘 해냈다고 느낀 적이 있나요?",
+      "reverse_score": false
+    },
+    {
+      "id": "A2",
+      "text": "새로운 도전이나 목표를 향해 나아가고 있다고 느끼시나요?",
+      "reverse_score": false
+    }
+  ]
+}
