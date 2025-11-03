@@ -30,30 +30,11 @@ model prescriptions {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model results {
-  id         Int      @id(map: "user_pkey") @unique(map: "user_id_key") @default(autoincrement())
-  created_at DateTime @db.Timestamptz(6)
-  updated_at DateTime @db.Timestamptz(6)
+  id         BigInt   @id @default(autoincrement())
   answers    Json
-  code       String?
-  nickname   String?
-  comment    String?
-}
-
-model PRESCRIPTION {
-  id                BigInt  @unique
-  code              String  @id
-  name              String?
-  dear              String?
-  letter            String?
-  concept           String?
-  movie             String?
-  challengeConcept  String?
-  challengeKeyword  String?
-  challengeActivity String?
-  maintainConcept   String?
-  maintainKeyword   String?
-  maintainActivity  String?
-  reconcileConcept  String?
-  reconcileKeyword  String?
-  reconcileActivity String?
+  code       String
+  nickname   String
+  comment    String?         // ✅ 선택 필드로 변경
+  created_at DateTime @default(now())  // ✅ 기본값 자동
+  updated_at DateTime @updatedAt       // ✅ 수정 시 자동 갱신
 }
