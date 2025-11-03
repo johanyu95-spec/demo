@@ -12,6 +12,10 @@ module.exports = {
     // !! 경고 !!
     ignoreBuildErrors: true,
   },
+  outputFileTracingIncludes: {
+    '/api/**/*': ['./node_modules/.prisma/client/**/*'],
+    '/*': ['./node_modules/.prisma/client/**/*'],
+  },
 };
 
 export default nextConfig;
