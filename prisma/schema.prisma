@@ -10,31 +10,33 @@ datasource db {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model prescriptions {
-  id                BigInt?
-  code              String  @id(map: "prescription_pkey")
-  name              String?
-  dear              String?
-  letter            String?
-  concept           String?
-  movie             String?
-  challengeConcept  String?
-  challengeKeyword  String?
-  challengeActivity String?
-  maintainConcept   String?
-  maintainKeyword   String?
-  maintainActivity  String?
-  reconcileConcept  String?
-  reconcileKeyword  String?
-  reconcileActivity String?
+  id                BigInt
+  code              String
+  name              String
+  dear              String
+  letter            String
+  concept           String
+  movie             String
+  challengeConcept  String
+  challengeKeyword  String
+  challengeActivity String
+  maintainConcept   String
+  maintainKeyword   String
+  maintainActivity  String
+  reconcileConcept  String
+  reconcileKeyword  String
+  reconcileActivity String
+
+  @@id([id, code, name, dear, letter, concept, movie, challengeConcept, challengeKeyword, challengeActivity, maintainConcept, maintainKeyword, maintainActivity, reconcileConcept, reconcileKeyword, reconcileActivity])
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model results {
-  id         BigInt   @id @default(autoincrement())
-  answers    Json
+  id         BigInt   @id @unique @default(autoincrement())
+  created_at DateTime @db.Timestamptz(6)
+  updated_at DateTime @updatedAt @db.Timestamptz(6)
+  answers    Json     @db.Json
   code       String
   nickname   String
-  comment    String?         // ✅ 선택 필드로 변경
-  created_at DateTime @default(now())  // ✅ 기본값 자동
-  updated_at DateTime @updatedAt       // ✅ 수정 시 자동 갱신
+  comment    String
 }
