@@ -91,6 +91,15 @@
 //   );
 // }
 
+// ❗  Next.js에게 "이 페이지는 절대 사전 렌더하지 말고,
+// 요청 들어올 때마다 서버에서 새로 만들어" 라고 선언
+
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
+// 또는 (효과 비슷)
+// export const revalidate = 0;
+
 // app/admin/page.tsx (또는 해당 파일 경로)
 import { prisma } from "@/app/lib/prisma";
 import Link from "next/link";
